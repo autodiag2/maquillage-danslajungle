@@ -62,6 +62,13 @@
             {% endfor %}
         </li>
         {% endif %}
+        {% if  page.certifications %}
+        <li>
+            {% for certification in page.certifications %}
+            {{certifications}}
+            {% endfor %}
+        </li>
+        {% endif %}
         {% if  page.par %}
         <li>Par : <a href="https://github.com/{{ page.par }}">{{ page.par }}</a></li>
         {% endif %}
