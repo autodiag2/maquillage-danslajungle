@@ -83,17 +83,6 @@
                     {{ page.adresse }}</a>
         </li>
         {% endif %}
-        {% assign jours = "lundi,mardi,mercredi,jeudi,vendredi,samedi,dimanche" | split: "," %}
-        {% if page.horaires %}
-            <li>
-                Horaires:
-                <ul>
-                {% for i in (0..6) %}
-                    <li>{{ jours[i] }}: {{ page.horaires[i] }}</li>
-                {% endfor %}
-                </ul>
-            </li>
-        {% endif %}
         {% if  page.email or page.tel %}
         <li>Contact : {{ page.email }} {% if  page.email and page.tel %} - {% endif %}{{ page.tel }}</li>
         {% endif %}
@@ -106,8 +95,16 @@
         {% if  page.site %}
         <li>Site : <a href="{{ page.site }}">{{ page.site }}</a></li>
         {% endif %}
+        {% assign jours = "lundi,mardi,mercredi,jeudi,vendredi,samedi,dimanche" | split: "," %}
         {% if page.horaires %}
-        {%- include timesWindow.html -%}
+            <li>
+                Horaires:
+                <ul>
+                {% for i in (0..6) %}
+                    <li>{{ jours[i] }}: {{ page.horaires[i] }}</li>
+                {% endfor %}
+                </ul>
+            </li>
         {% endif %}
     </ul>
 </div>
