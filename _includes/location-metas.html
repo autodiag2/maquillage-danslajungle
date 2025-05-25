@@ -65,8 +65,8 @@
         {% if  page.certifications %}
         <li>
             Certifications: 
-            {% for certification in page.certifications %}
-            {{certification}} 
+            {% for cert in page.certifications %}
+            <img src="{{ site.baseurl }}/assets/media/label-{{ cert }}.png" alt="{{ cert | upcase }}" />
             {% endfor %}
         </li>
         {% endif %}
