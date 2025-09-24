@@ -57,7 +57,7 @@
             {% elsif type == "centre de loisirs" %}
             <i class="fas fa-child" title="{{ type }}"></i>
             {% else %}
-            {{ type }}
+            {{ type }}{% if forloop.last == false %}, {% endif %}
             {% endif %}
             {% endfor %}
         </li>
